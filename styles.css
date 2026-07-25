@@ -103,6 +103,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   border-bottom: 1px solid transparent;
 }
 .site-header.scrolled {
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
   border-bottom-color: var(--border);
   box-shadow: 0 6px 24px -18px rgba(0, 0, 0, .8);
@@ -166,9 +167,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .scroll-progress {
   position: absolute; bottom: -1px; left: 0;
-  height: 2px; width: 0;
+  height: 2px; width: 100%;
   background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-  transition: width .1s linear;
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 /* ---------- Hero ---------- */
@@ -351,7 +353,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   margin-bottom: 3px;
 }
 .fact-list span { font-size: 15px; font-weight: 600; }
-.status-open { color: var(--accent); }
 
 .photo-frame { position: relative; border-radius: var(--radius); }
 .photo-frame::after {
@@ -497,9 +498,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
     transform: translateY(-130%);
-    transition: transform .3s ease;
+    visibility: hidden;
+    transition: transform .3s ease, visibility .3s ease;
   }
-  .nav-list.open { transform: none; }
+  .nav-list.open { transform: none; visibility: visible; }
   .nav-list a { padding: 12px 6px; font-size: 16px; }
   .nav-list a.active::after { left: 6px; right: auto; width: 18px; }
   .scroll-hint { display: none; }

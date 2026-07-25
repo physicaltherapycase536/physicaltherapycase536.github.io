@@ -31,6 +31,9 @@
     applyTheme(savedTheme);
   } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
     applyTheme('light');
+  } else {
+    // Giữ mặc định trong HTML, nhưng vẫn phải đồng bộ aria-pressed cho nút.
+    applyTheme(root.getAttribute('data-theme') || 'dark');
   }
 
   if (themeToggle) {
