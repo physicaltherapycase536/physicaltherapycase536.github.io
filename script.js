@@ -81,9 +81,9 @@
   /* ---------- 3. Hiệu ứng gõ chữ ở hero ---------- */
   var typedEl = document.getElementById('typed');
   var PHRASES = [
-    'Full-stack Developer',
-    'Người thích code sạch',
-    'Fan của TypeScript',
+    'Embedded Software Engineer',
+    'Firmware Developer',
+    'C/C++ Systems Developer',
     'Luôn học thêm thứ mới',
   ];
 
